@@ -82,5 +82,20 @@ namespace LINQ.Tests
 
             Assert.Equal(39, distinct);
         }
+
+        [Fact]
+        public void WhatIsALinqMethodCallAnyway()
+        {
+            var query = geojson.features.Where(feature => 
+            feature.properties.neighborhood != "");
+
+            var distinct = query.Distinct().Count();
+
+
+            Assert.Equal(39, distinct);
+
+            
+
+        }
     }
 }
