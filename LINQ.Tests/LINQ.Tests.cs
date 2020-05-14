@@ -80,7 +80,7 @@ namespace LINQ.Tests
 
             var distinct = query.Distinct().Count();
 
-            Assert.Equal(39, counter);
+            Assert.Equal(39, distinct);
         }
     }
 }
