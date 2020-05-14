@@ -47,14 +47,7 @@ namespace LINQ.Tests
                         in geojson.features 
                         select feature.properties.neighborhood;
 
-            int counter = 0;
-
-            foreach (string neighborhood in query)
-            {
-                counter++;
-            }
-
-
+            int counter = query.Count();
 
             Assert.Equal("10001", geojson.features.First().properties.zip);
             Assert.Equal("10292", geojson.features.Last().properties.zip);
