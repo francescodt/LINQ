@@ -67,7 +67,7 @@ namespace LINQ.Tests
 
             int counter = query.Count();
 
-            Assert.Equal(142, counter);
+            Assert.Equal(143, counter);
         }
     }
 }
