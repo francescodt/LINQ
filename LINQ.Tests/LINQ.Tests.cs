@@ -60,7 +60,14 @@ namespace LINQ.Tests
         [Fact]
         public void FilterNeighborhoodsWithNoNames()
         {
+            var query = from feature
+                        in geojson.features
+                        where feature.properties.neighborhood != ""
+                        select feature.properties.neighborhood;
 
+            int counter = query.Count();
+
+            Assert.Equal(142, counter);
         }
     }
 }
