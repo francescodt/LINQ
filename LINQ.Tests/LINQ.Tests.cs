@@ -86,13 +86,15 @@ namespace LINQ.Tests
         [Fact]
         public void WhatIsALinqMethodCallAnyway()
         {
-            var query = geojson.features.Where(feature => 
-            feature.properties.neighborhood != "");
+            var query = geojson.features
+                        .Where(feature => !feature.properties.neighborhood.Equals(""))
+                        .Select(feature => feature.properties.neighborhood)
+                        .Distinct();
 
-            var distinct = query.Distinct().Count();
 
 
-            Assert.Equal(39, distinct);
+
+            Assert.Equal(39, query.Count());
 
             
 
