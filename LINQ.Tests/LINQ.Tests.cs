@@ -69,5 +69,18 @@ namespace LINQ.Tests
 
             Assert.Equal(143, counter);
         }
+
+        [Fact]
+        public void DuplicateRemovalInOurNeighborhood()
+        {
+            var query = from feature
+                        in geojson.features
+                        where feature.properties.neighborhood != ""
+                        select feature.properties.neighborhood;
+
+            var distinct = query.Distinct().Count();
+
+            Assert.Equal(39, counter);
+        }
     }
 }
