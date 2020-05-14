@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LINQ
 {
-    class GeoTypes
+    public class GeoTypes
     {
         public string type { get; set; }
         public List<double> coordinates { get; set; }
@@ -24,7 +24,7 @@ namespace LINQ
     public class Feature
     {
         public string type { get; set; }
-        public Geometry geometry { get; set; }
+        public GeoTypes geometry { get; set; }
         public Properties properties { get; set; }
     }
 
